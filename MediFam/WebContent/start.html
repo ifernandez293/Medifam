@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Starting page</title>
+</head>
+
+<script type="text/javascript">
+
+function checkForm() 
+{
+	var check = true;
+	
+	var user = document.getElementById("user").value;
+	var password = document.getElementById("password").value;
+	
+		if( !user || !password )
+		{
+			if( user == "" )
+			{
+				alert("User can not be empty");
+				document.getElementById("user").value = "";
+			}
+			
+			if( password == "" )
+			{
+				alert("Password can not be empty");
+				document.getElementById("password").value = "";
+			}
+			
+			comprobacion = false;
+		}
+		
+	return check;
+}
+
+</script>
+
+<body>
+
+<h1>MEDIFAM</h1> <br>
+
+<form onsubmit="return checkForm();" method="get" action="main.html">
+
+User <br>
+<input name="user" id="user"> <br> <br>
+Password <br>
+<input name="password" id="password" type="password"> <br> <br> <br>
+
+<button type="submit" value="            Enviar            "> </button> <br>
+<input type="reset" value="            Reset            ">
+
+<br> <br> <br> © 2020 MediFam. All Rights Reserved.
+	
+</form>
+
+</body>
+
+</html>
