@@ -1,14 +1,42 @@
 @charset "UTF-8";
 
-h1 {
+h1
+ {
 	text-align: center;
 	color: green;
 }
 
-input {
+input 
+{
 	text-align: center;
+	margin: auto;
 }
 
-body {
+option
+{
 	text-align: center;
+	margin: auto;
+}
+
+select
+{
+	text-align: center;
+	margin: auto;
+}
+
+body 
+{
+	text-align: center;
+	margin: auto;
+}
+
+table
+{
+	border: 1px solid green;
+	margin: auto;
+}
+
+th, tr, td
+{
+	border: 1px solid green;
 }
