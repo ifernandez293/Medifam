@@ -43,7 +43,7 @@ function checkForm()
 
 <h1>MEDIFAM</h1> <br>
 
-<form onsubmit="return checkForm();" method="post" action="main.html">
+<form onsubmit="return checkForm();" method="get" action="main.html">
 
 Usuario <br>
 <input name="user" id="user"> <br> <br>
@@ -51,8 +51,18 @@ Contraseña <br>
 <input name="password" id="password" type="password"> <br> 
 
 <br> <br>
-<input type="submit" value="            Enviar            "> <br>
-<input type="reset" value="            Reset            ">
+
+
+<table>
+	<tr> 
+		<td>
+			<input type="submit" value="Reset">
+		</td> 
+		<td>
+			<input type="submit" value="Iniciar sesión">
+		</td>
+	</tr>
+</table>
 
 <br> <br> <br> © 2020 MediFam. All Rights Reserved.
 	
