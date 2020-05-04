@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+	
+	<ui:define name="tituloCabecera">
+		Inicio
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Medifam
+	</ui:define>
+	
+	<ui:define name="contenido">
+		
+		<h3>
+			Página de Inicio
+		</h3>
+		
+		<h:outputText value="Introduce tu usuario" />
+		<br/>
+		<h:inputText value="#{personaMB.nombre}" />
+		
+		<br/> <br/>
+		
+		<h:outputText value="Introduce tu contraseña" />
+		<br/>
+		<h:inputText value="#{personaMB.idPersona}" />
+	
+		<br/>
+		
+		<h:outputLink value="principal.xhtml">
+			<h6>
+				Entrar
+			</h6>
+		</h:outputLink>
+		
+	</ui:define>
+	
+</ui:composition>
+
+</html>

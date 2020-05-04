@@ -1,0 +1,11 @@
+idMedicamento,nombre,detalle,stock
+1,Ibuprofeno,Antiinflamatorio,10
+2,Omeprazol,"Dolor de estómago",25
+3,Amoxicilina,Antibiótico,20
+4,Sintrom,"Anticoagulante común",7
+5,Ramipril,Hipertensión,6
+6,Furosemida,Diurético,20
+7,Paracetamol,"Dolor de cabeza",12
+8,Simvastatina,Colesterol,3
+9,Dalsy,"Fiebre en niños",8
+10,Terbasmin,"Asma en niños",2

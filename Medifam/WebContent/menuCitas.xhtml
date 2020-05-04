@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Menú de Citas
+	</ui:define>
+
+	<ui:define name="tituloCuerpo">
+		Menú de Cita Previa
+	</ui:define>
+	
+	<ui:define name="contenido">
+		
+		<h3>
+			Menú de Citas
+		</h3>
+		
+		<h:form>
+		
+			<table>
+			
+				<tr>
+					<td>
+						Listado de Citas
+					</td>
+					<td>
+						<h:commandButton action="citas.xhtml" value="&#x21a9;" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Solicitar cita
+					</td>
+					<td>
+						<h:commandButton action="nuevaCita.xhtml" value="&#x21a9;" />
+					</td>
+				</tr>
+			
+			</table>
+		
+		</h:form>
+		
+		<br/> <br/>
+		
+		<h:outputLink value="principal.xhtml">
+			<h6>
+				Menú Principal
+			</h6>
+		</h:outputLink>
+		
+	</ui:define>
+	
+</ui:composition>
+	
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Medicamentos
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Medifam
+	</ui:define>
+	
+	<ui:define name="contenido">
+	
+		<h3>
+			Stock de medicamentos
+		</h3>
+		
+		<h:dataTable var="medicamento" value="#{medicamentoMB.listadoMedicamentos}">
+			
+			<h:column>
+				<f:facet name="header">
+					ID Medicamento
+				</f:facet>
+				#{medicamento.idMedicamento}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Medicamento
+				</f:facet>
+				#{medicamento.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Detalle
+				</f:facet>
+				#{medicamento.detalle}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Stock
+				</f:facet>
+				#{medicamento.stock}
+			</h:column>
+			
+		</h:dataTable>
+		
+		<br/>
+		
+		<h3>
+			Tomar medicamento 
+		</h3>
+		
+		<h:form>
+			
+			<table>
+				<tr>
+					<td>
+						ID Medicamento
+					</td>
+					<td>
+						Unidades
+					</td>
+					<td>
+						Consumir
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:inputText value="#{medicamentoMB.idMedicamento}" a:placeholder="ID Medicamento" />
+					</td>
+					<td>
+						<h:inputText value="#{medicamentoMB.unidades}" a:placeholder="Unidades" />
+					</td>
+					<td>
+						<h:commandButton action="#{medicamentoMB.consumirStock()}" value="&#x21a9;" />
+					</td>
+				</tr>
+			</table>
+			
+		</h:form>
+		
+		<br/>
+		
+		<h3>
+			Rellenar medicamento 
+		</h3>
+		
+		<h:form>
+			
+			<table>
+				<tr>
+					<td>
+						ID Medicamento
+					</td>
+					<td>
+						Unidades
+					</td>
+					<td>
+						Rellenar
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h:inputText value="#{medicamentoMB.idMedicamento}" a:placeholder="ID Medicamento" />
+					</td>
+					<td>
+						<h:inputText value="#{medicamentoMB.unidades}" a:placeholder="Apellidos" />
+					</td>
+					<td>
+						<h:commandButton action="#{medicamentoMB.rellenarStock()}" value="&#x21a9;" />
+					</td>
+				</tr>
+			</table>
+			
+			
+		</h:form>
+		
+		<h:outputLink value="principal.xhtml">
+			<h6>
+				Menú principal
+			</h6>
+		</h:outputLink>
+	
+	</ui:define>
+	
+</ui:composition>
+
+</html>

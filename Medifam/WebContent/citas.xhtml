@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Citas
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Citas Previas
+	</ui:define>
+	
+	<ui:define name="contenido">
+	
+		<h3>
+			Seleccione un usuario
+		</h3>
+	
+		<h:form>
+			
+			<table>
+			
+				<tr>
+					<td>
+						Nombre
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.nombre}" a:placeholder="Nombre" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Apellidos
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.apellidos}" a:placeholder="Apellidos" />
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+						Visualizar
+					</td>
+					<td>
+						<h:commandButton action="#{citaMB.visualizarCitas()}" value="&#x21a9;" />
+					</td>
+				</tr>
+				
+			</table>
+			
+		</h:form>
+		
+		<br/>
+		
+		<h3 >
+			<h:outputText rendered="#{citaMB.visualizar}" value="Listado de citas" /> 
+		</h3>
+		
+		<h:dataTable rendered="#{citaMB.visualizar}" var="citas" value="#{citaMB.cita}" >
+		
+			<h:column>
+				
+				<h:dataTable rendered="#{citaMB.visualizar}" var="cita" value="#{citas.consultas}">
+			
+					<h:column>
+						<f:facet name="header">ID Cita</f:facet>
+						#{cita.idConsulta}
+					</h:column>
+				</h:dataTable>
+					
+			</h:column>
+			
+			<h:column>
+				
+				<h:dataTable rendered="#{citaMB.visualizar}" var="cita" value="#{citas.consultas}">
+				
+					<h:column>
+						<f:facet name="header">Fecha Cita</f:facet>
+						#{cita.fecha}
+					</h:column>
+				
+				</h:dataTable>
+				
+			</h:column>
+			
+			<h:column>
+			
+				<h:dataTable rendered="#{citaMB.visualizar}" var="facultativo" value="#{citas.facultativos}">
+					
+					<h:column>
+						<f:facet name="header">Facultativo</f:facet>
+						#{facultativo.nombre} #{facultativo.apellidos}
+					</h:column>
+					
+				</h:dataTable>
+				
+			</h:column>
+			
+			<h:column>
+			
+				<h:dataTable rendered="#{citaMB.visualizar}" var="facultativo" value="#{citas.facultativos}">
+						
+					<h:column>
+						<f:facet name="header">Especialidad</f:facet>
+						#{facultativo.especialidad}
+					</h:column>
+				
+				</h:dataTable>
+				
+			</h:column>
+			
+			<h:column>
+			
+				<h:dataTable rendered="#{citaMB.visualizar}" var="facultativo" value="#{citas.facultativos}">
+							
+					<h:column>
+						<f:facet name="header">Centro</f:facet>
+						#{facultativo.centro}
+					</h:column>
+				
+				</h:dataTable>
+			
+			</h:column>
+			
+		</h:dataTable>		
+		
+		<br/>
+		
+		<h:outputLink value="menuCitas.xhtml">
+			<h6>
+				Menú de Citas
+			</h6>
+		</h:outputLink>
+		
+	</ui:define>
+	
+</ui:composition>
+	
+</html>

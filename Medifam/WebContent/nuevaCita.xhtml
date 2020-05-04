@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Solicitar Cita
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Solicitar Cita
+	</ui:define>
+	
+	<ui:define name="contenido">
+		
+		<h3>
+			Listado de Facultativos
+		</h3>
+		
+		<h:dataTable var="facultativo" value="#{citaMB.listadoFacultativos}">
+		
+			<h:column>
+				<f:facet name="header">ID Facultativo</f:facet>
+				#{facultativo.idFacultativo}
+			</h:column>
+		
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				#{facultativo.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Apellidos</f:facet>
+				#{facultativo.apellidos}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Especialidad</f:facet>
+				#{facultativo.especialidad}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Centro</f:facet>
+				#{facultativo.centro}
+			</h:column>
+			
+		</h:dataTable>
+		
+		<br/>
+		
+		<h3>
+			Solicitar Nueva Cita
+		</h3>
+		
+		<h:form>
+		
+			<table>
+				
+				<tr>
+					<td>
+					 	Nombre Usuario
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.nombre}" a:placeholder="Nombre" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+					 	Apellidos Usuario
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.apellidos}"  a:placeholder="Apellidos" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+					 	ID Facultativo
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.idFacultativo}"  a:placeholder="ID Facultativo"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+					 	Fecha Cita
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.fecha.date}"  a:placeholder="YYYY-MM-DD"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+					 	Hora Cita
+					</td>
+					<td>
+						<h:inputText value="#{citaMB.fecha.time}"  a:placeholder="HH-MM-SS"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Confirmar
+					</td>
+					<td>
+						<h:commandButton action="#{citaMB.solicitarCita()}" value="&#x21a9;" />
+					</td>
+				</tr>
+				
+			</table>
+		
+		</h:form>
+		
+		<h:outputLink value="menuCitas.xhtml">
+			<h6>
+				Menú de Citas
+			</h6>
+		</h:outputLink>
+		
+	</ui:define>
+	
+</ui:composition>
+	
+</html>

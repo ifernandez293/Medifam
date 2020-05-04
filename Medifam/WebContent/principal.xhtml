@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Principal
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Medifam
+	</ui:define>
+	
+	<ui:define name="contenido">
+		
+		<h3>Elija una operación</h3>
+		
+		<table>
+		
+			<tr>
+				<td>
+					Perfil médico
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="perfil.xhtml" value="&#x21a9;" />
+					</h:form>					
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Calendarios
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="calendario.xhtml" value="&#x21a9;" />
+					</h:form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Cita Previa
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="menuCitas.xhtml" value="&#x21a9;" />
+					</h:form>					
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Medicamentos
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="medicamentos.xhtml" value="&#x21a9;" />
+					</h:form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Pastillero
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="pastillero.xhtml" value="&#x21a9;" />
+					</h:form>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Ajustes
+				</td>
+				<td>
+					<h:form>
+						<h:commandButton action="ajustes.xhtml" value="&#x21a9;" />
+					</h:form>
+				</td>
+			</tr>
+		
+		</table>
+		
+		<h:outputLink value="inicio.xhtml">
+			<h6>
+				Cerrar sesión
+			</h6>
+		</h:outputLink>
+		
+	</ui:define>
+
+</ui:composition>
+	
+</html>

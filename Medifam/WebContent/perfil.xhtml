@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Perfil
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Medifam
+	</ui:define>
+	
+	<ui:define name="contenido">
+	
+		<h3>
+			Seleccione un perfil
+		</h3>
+			
+		<h:form>
+			
+			<table>
+			
+				<tr>
+					<td>
+						Nombre
+					</td>
+					<td>
+						<h:inputText value="#{perfilMB.nombre}" a:placeholder="Nombre" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Apellidos
+					</td>
+					<td>
+						<h:inputText value="#{perfilMB.apellidos}" a:placeholder="Apellidos" />
+					</td>
+				</tr>
+			
+				<tr>
+					<td>
+						Visualizar
+					</td>
+					<td>
+						<h:commandButton action="#{perfilMB.imprimirDatos()}"
+											 value="&#x21a9;" />
+					</td>
+				</tr>
+				
+			</table>
+			
+		</h:form>
+		
+		<br/> <br/>
+		
+		<h:dataTable var="persona" rendered="#{perfilMB.ver}" value="#{perfilMB.persona}">
+		
+			<h:column>
+				<f:facet name="header">
+					Nombre
+				</f:facet>
+				#{persona.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Apellidos
+				</f:facet>
+				#{persona.apellidos}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Nacimiento
+				</f:facet>
+				#{persona.nacimiento}
+			</h:column>
+		
+		</h:dataTable>
+		
+		<br/>
+		
+		<h:dataTable var="alergia" rendered="#{perfilMB.ver}" value="#{perfilMB.alergia}">
+			
+			<h:column>
+				<f:facet name="header">
+					Nombre
+				</f:facet>
+				#{alergia.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Descripción
+				</f:facet>
+				#{alergia.detalle}
+			</h:column>
+			
+		</h:dataTable>
+		
+		<h:outputLink value="principal.xhtml">
+			<h6>
+				Menú principal
+			</h6>
+		</h:outputLink>
+	
+	</ui:define>
+	
+</ui:composition>
+	
+</html>

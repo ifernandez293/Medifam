@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+
+	<ui:define name="tituloCabecera">
+		Pastillero
+	</ui:define>
+	
+	<ui:define name="tituloCuerpo">
+		Medifam
+	</ui:define>
+	
+	<ui:define name="contenido">
+	
+		<h3>
+			Seleccione un pastillero
+		</h3>
+			
+		<h:form>
+			
+			<table>
+			
+				<tr>
+					<td>
+						Nombre
+					</td>
+					<td>
+						<h:inputText value="#{pastilleroMB.nombre}" a:placeholder="Nombre" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Apellidos
+					</td>
+					<td>
+						<h:inputText value="#{pastilleroMB.apellidos}" a:placeholder="Apellidos" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Frecuencia
+					</td>
+					<td>
+						<h:inputText value="#{pastilleroMB.frecuencia}" a:placeholder="Frecuencia" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						Visualizar
+					</td>
+					<td>
+						<h:commandButton action="#{pastilleroMB.visualizarPastillero()}"
+											 value="&#x21a9;" />
+					</td>
+				</tr>
+				
+			</table>
+			
+		</h:form>
+		
+		<br/> <br/>
+		
+		<h:dataTable var="persona" rendered="#{pastilleroMB.ver}" value="#{pastilleroMB.persona}">
+			
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				#{persona.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Apellidos</f:facet>
+				#{persona.apellidos}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Nacimiento</f:facet>
+				#{persona.nacimiento}
+			</h:column>
+			
+		</h:dataTable>
+		
+		<br/> <br/>
+		
+		<h:dataTable var="pastillero" rendered="#{pastilleroMB.ver}" value="#{pastilleroMB.pastillero}">
+		
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				#{pastillero.medicamento.nombre}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Detalle</f:facet>
+				#{pastillero.medicamento.detalle}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Stock</f:facet>
+				#{pastillero.medicamento.stock}
+			</h:column>
+		
+		</h:dataTable>
+		
+		<h:outputLink value="principal.xhtml">
+			<h6>
+				Menú principal
+			</h6>
+		</h:outputLink>
+	
+	</ui:define>
+	
+</ui:composition>
+
+</html>
