@@ -17,28 +17,26 @@
 	
 	<ui:define name="contenido">
 		
-		<h3>
-			Página de Inicio
-		</h3>
+		<h3>Bienvenido</h3>
 		
 		<h:outputText value="Introduce tu usuario" />
 		<br/>
 		<h:inputText value="#{personaMB.nombre}" />
-		
+			
 		<br/> <br/>
-		
+			
 		<h:outputText value="Introduce tu contraseña" />
 		<br/>
-		<h:inputText value="#{personaMB.idPersona}" />
-	
-		<br/>
+		<h:inputSecret value="#{personaMB.idPersona}" />
+		
+			<br/>
 		
 		<h:outputLink value="principal.xhtml">
 			<h6>
 				Entrar
 			</h6>
 		</h:outputLink>
-		
+			
 	</ui:define>
 	
 </ui:composition>

@@ -26,7 +26,7 @@ public class Persona implements Serializable
 	private String apellidos;
 
 	private String direccion;
-
+	
 	@Temporal(TemporalType.DATE)
 	private Date nacimiento;
 
@@ -74,5 +74,4 @@ public class Persona implements Serializable
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 }
